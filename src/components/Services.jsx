@@ -1,6 +1,5 @@
-"use client"
 
-const Contacts = () => {
+const Services = () => {
     return (
         <div>
             
@@ -8,4 +7,4 @@ const Contacts = () => {
     );
 };
 
-export default Contacts;
+export default Services;

@@ -1,5 +1,5 @@
 
-const SideNavbar = () => {
+const SiteFooter = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const SideNavbar = () => {
     );
 };
 
-export default SideNavbar;
+export default SiteFooter;

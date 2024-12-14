@@ -1,6 +1,6 @@
-"use client"
 
-const Contacts = () => {
+
+const Loading = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Contacts = () => {
     );
 };
 
-export default Contacts;
+export default Loading;

@@ -1,6 +1,7 @@
 "use client"
+import React from 'react';
 
-const Contacts = () => {
+const Error = () => {
     return (
         <div>
             
@@ -8,4 +9,4 @@ const Contacts = () => {
     );
 };
 
-export default Contacts;
+export default Error;

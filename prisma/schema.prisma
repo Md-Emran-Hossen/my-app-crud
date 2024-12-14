@@ -23,6 +23,8 @@ model Employee{
   id Int @id @default(autoincrement())
   name String
   designation String
+  image String
+  country String
   city String
   salary Int
 }

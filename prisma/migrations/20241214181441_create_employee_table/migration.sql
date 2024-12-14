@@ -12,6 +12,8 @@ CREATE TABLE `Employee` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(191) NOT NULL,
     `designation` VARCHAR(191) NOT NULL,
+    `image` VARCHAR(191) NOT NULL,
+    `country` VARCHAR(191) NOT NULL,
     `city` VARCHAR(191) NOT NULL,
     `salary` INTEGER NOT NULL,
 

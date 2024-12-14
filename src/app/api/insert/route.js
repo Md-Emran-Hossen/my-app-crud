@@ -18,6 +18,8 @@ export async function POST(req, res) {
             data:{
                 name : reqBody['name'],
                 designation : reqBody['designation'],
+                image : reqBody['image'],
+                country : reqBody['country'],
                 city : reqBody['city'],
                 salary : parseInt(reqBody['salary']) ,
             }

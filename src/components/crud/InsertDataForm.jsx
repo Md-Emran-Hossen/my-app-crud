@@ -6,7 +6,7 @@ import { ErrorToast, IsEmpty, SuccessToast } from '@/utility/FormHelper';
 
 const InsertDataForm = () => {
 
-    let [data, setData] = useState({ name: "", designation: "", city: "", salary: "" });
+    let [data, setData] = useState({ name: "", designation: "", image: "", country: "", city: "", salary: "" });
 
     const [data1, setData1] = useState()
 
@@ -42,7 +42,7 @@ const InsertDataForm = () => {
 
             if (ResJson['status'] === "success") {
                 SuccessToast("Insert Success")
-                window.location.href = "/";
+                window.location.href = "/crud/load";
             }
             else {
                 ErrorToast("Request Fail")
@@ -61,35 +61,81 @@ const InsertDataForm = () => {
 
     //   const dataAll = getData();
 
-      
+
     return (
-        <div className="row justify-content-center center-screen bg-slate-400">
-            <div className="col-md-4 col-lg-4 col-sm-12 col-12 flex-col">
-                <form onSubmit={formSubmit} className="card animated fadeIn p-5 gradient-bg">
 
-                    <h5 className="mb-3">Insert Employee Info</h5>
-                    <label className="form-label">Employee Name</label>
-                    <input onChange={(e) => { inputOnChange("name", e.target.value) }} type="text" className="form-control mb-2" />
+        <div className="w-5/6 mx-auto bg-emerald-200 my-4">
+            <div className="w-full">
+                <div className="col-md-4 col-lg-4 col-sm-12 col-12 flex-col">
+                    <form onSubmit={formSubmit} className="card animated fadeIn p-5 gradient-bg">
 
-                    <label className="form-label">Employee Designation</label>
-                    <input onChange={(e) => { inputOnChange("designation", e.target.value) }} type="text" className="form-control mb-1" />
+                        <h5 className="mb-3 font-bold text-3xl">Create Employee</h5>
+                        <div className="grid grid-cols-3 gap-5 items-center">
+                            <div>
+                                <div className="p-2">
+                                    <label className="form-label">Employee Name</label>
+                                </div>
+                                <div className="p-2"> 
+                                    <input onChange={(e) => { inputOnChange("name", e.target.value) }} type="text" className="form-control mb-2" />
+                                </div>
+                            </div>
 
-                    <label className="form-label">Employee City</label>
-                    <input onChange={(e) => { inputOnChange("city", e.target.value) }} type="text" className="form-control mb-1" />
+                            <div>
+                                <div className="p-2">
+                                    <label className="form-label">Employee Designation</label>
+                                </div>
+                                <div className="p-2">
+                                    <input onChange={(e) => { inputOnChange("designation", e.target.value) }} type="text" className="form-control mb-1" />
+                                </div>
+                            </div>
 
-                    <label className="form-label">Employee Salary</label>
-                    <input onChange={(e) => { inputOnChange("salary", e.target.value) }} type="text" className="form-control mb-1" />
+                            <div>
+                                <div className="p-2">
+                                    <label className="form-label">Image</label>
+                                </div>
+                                <div className="p-2">
+                                    <input onChange={(e) => { inputOnChange("image", e.target.value) }} type="text" className="form-control mb-1" />
+                                </div>
+                            </div>
 
+                            <div>
+                                <div className="p-2">
+                                    <label className="form-label">Country</label>
+                                </div>
+                                <div className="p-2">
+                                    <input onChange={(e) => { inputOnChange("country", e.target.value) }} type="text" className="form-control mb-1" />
+                                </div>
+                            </div>
 
-                    <SubmitButton className="btn btn-danger mt-3" submit={submit} text="Submit" />
-                    {/* <button className="btn btn-danger mt-3" submit={submit} text="Submit"></button> */}
-                    {/* <div className="my-3 d-flex">
+                            <div>
+                                <div className="p-2">
+                                    <label className="form-label">City</label>
+                                </div>
+                                <div className="p-2">
+                                    <input onChange={(e) => { inputOnChange("city", e.target.value) }} type="text" className="form-control mb-1" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className="p-2">
+                                    <label className="form-label">Salary</label>
+                                </div>
+                                <div className="p-2">
+                                    <input onChange={(e) => { inputOnChange("salary", e.target.value) }} type="text" className="form-control mb-1" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <SubmitButton className="pl-2 text-2xl font-bold" submit={submit} text="Submit" />
+                        {/* <button className="btn btn-danger mt-3" submit={submit} text="Submit"></button> */}
+                        {/* <div className="my-3 d-flex">
                     <Link href="/User/SignUp" className="nav-link mx-2">Sign Up |</Link>
                     <Link href="/User/EmailVerify" className="nav-link">Forget Password</Link>
                 </div> */}
 
-                </form>
-            </div>      
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 async function getData() {
@@ -31,9 +32,10 @@ const LoadData = async () => {
                 <tbody>
 
                     {data.map((item) => (
-                        <tr key={item.i}
+                        <tr key={item.id}
                             className="hover:bg-gray-100"
                         >
+                            <td>{item.id}</td>
                             <td>
                                 {/* <Image src={item['image']} height={24} width={24} alt="employee image"></Image> */}
                                 <img src={item.image} height={48} width={56} alt="employee image"></img>
@@ -49,7 +51,11 @@ const LoadData = async () => {
                                     <Link className="text-green-500 font-bold" href={"/"}>Edit</Link>
                                 </div>
                                 <div>
-                                    <Link className="text-red-400 font-bold" href={"/"}>Delete</Link>
+                                    <Link className="text-red-400 font-bold" 
+                                         href={{ usePathname: "/crud/delete", query: { id: item.id } }}
+                                    >
+                                            Delete
+                                    </Link>
                                 </div>
 
                                 {/* <button onClick={() => handleDelete(item['id'])}

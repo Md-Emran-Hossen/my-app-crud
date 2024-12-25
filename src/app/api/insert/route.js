@@ -9,11 +9,11 @@ export async function POST(req, res) {
 
         const reqBody= await req.json();
 
-       console.log("Form Data Test:=", reqBody);
+    //    console.log("Form Data Test:=", reqBody);
 
         const prisma = new PrismaClient();
        
-       let result = await prisma.Employee.create(
+       let result = await prisma.employee.create(
         {
             data:{
                 name : reqBody['name'],

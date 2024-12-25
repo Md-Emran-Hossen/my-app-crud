@@ -2,13 +2,15 @@
 import React, { useState } from 'react';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import { ErrorToast, IsEmpty, SuccessToast } from '@/utility/FormHelper';
+import { useRouter } from 'next/navigation';
 
 
 const InsertDataForm = () => {
 
     let [data, setData] = useState({ name: "", designation: "", image: "", country: "", city: "", salary: "" });
 
-    const [data1, setData1] = useState()
+    // const [data1, setData1] = useState()
+     const router = useRouter();
 
     const [submit, setSubmit] = useState(false);
     const inputOnChange = (name, value) => {
@@ -42,24 +44,14 @@ const InsertDataForm = () => {
 
             if (ResJson['status'] === "success") {
                 SuccessToast("Insert Success")
-                window.location.href = "/crud/load";
+                // window.location.href = "/crud/load";
+                router.push('/crud/load')
             }
             else {
                 ErrorToast("Request Fail")
             }
         }
     }
-
-    // useEffect(() => {
-    //     fetch(process.env.BASE_URL+'/api/populate')
-    //       .then((res) => res.json())
-    //       .then((data1) => {
-    //         setData1(data1)
-    //         setLoading(false)
-    //       })
-    //   }, [])
-
-    //   const dataAll = getData();
 
 
     return (

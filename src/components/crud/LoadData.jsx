@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ErrorToast, SuccessToast } from "@/utility/FormHelper";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const LoadData =  () => {
 
@@ -24,9 +25,9 @@ const LoadData =  () => {
         });
       
         if(response['status']===200){
-            console.log("IF Condition Execute:",response);
+          //  console.log("IF Condition Execute:",response);
             location.reload();
-          //  router.refresh();
+         //   router.refresh();
         }
         else {
             ErrorToast("Invalid Request")
@@ -86,11 +87,16 @@ const LoadData =  () => {
                             <td>{item['salary']}</td>
                             <td>
                                 <div>
-                                  <button onClick={()=>onDelete(item['id'])} className="btn btn-danger btn-sm px-2">Delete</button>
+                                  <button onClick={()=>onDelete(item['id'])} className="text-red-500 font-bold">Delete</button>
                                     {/* <Link className="text-green-500 font-bold" href={"/"}>Edit</Link> */}
                                 </div>
                                 <div>
-                                <button  className="btn btn-danger btn-sm px-2">Edit</button>
+                                {/* <button  className="btn btn-danger btn-sm px-2">Edit</button> */}
+                                   <Link 
+                                        className="text-green-500 font-bold" 
+                                        href={`/crud/update?id=${item['id']}`}>
+                                            Edit
+                                    </Link>
                                     {/* <Link className="text-red-400 font-bold" href={"/"}>Delete</Link> */}
                                     {/* onClick={()=>onEdit(item['id'])} */}
                                 </div>
